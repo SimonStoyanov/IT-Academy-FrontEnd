@@ -121,15 +121,23 @@
             .top-bar {
                 flex-direction: column;
             }
-
             .content {
                 flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .articles {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+            .article {
+                flex: 1;
             }
         }
     </style>
 </head>
 <body>
-
     <!-- Top Section -->
     <div class="wrapper">
         <header class="top-bar">

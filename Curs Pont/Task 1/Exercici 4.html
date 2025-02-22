@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: left;
+            color: black;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        /* Wrapper for Black Background */
+        .wrapper {
+            background-color: black;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Top Navigation Bar */
+        .top-bar {
+            display: flex;
+            background-color: rgb(73, 73, 110);
+            padding: 20px;
+            margin: 10px;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo, .nav, .social {
+            background-color: #c44;
+            padding: 10px;
+        }
+
+        .logo { flex: 1; }
+        .nav { flex: 4; } /* Wider */
+        .social { flex: 1; }
+
+        /* Banner */
+        .banner-wrapper {
+            display: flex;
+            background-color: #f7b500;
+            padding: 20px;
+            margin: 10px;
+            gap: 10px;
+        }
+        .banner-wrapper > p {
+            flex: 1;
+            background-color: yellow;
+            padding: 10px;
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        /* Main Content Layout */
+        .content {
+            display: flex;
+        }
+
+        /* Articles Section */
+        .articles {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #333;
+            padding: 20px;
+            margin: 10px;
+            gap: 20px;
+            flex: 4;
+        }
+
+        .article {
+            background-color: #4682b4;
+            padding: 10px;
+            flex: 1 1 calc(50% - 10px); /* Two per row */
+        }
+
+        .navigation {
+            background-color: #6a9fb5;
+            padding: 10px;
+            flex: 1;
+        }
+
+        /* Sidebar (Ads) */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            margin: 10px;
+            flex: 1;
+            background-color: #c44;
+        }
+
+        .publicidad {
+            padding: 10px;
+            margin: 10px;
+            background-color: #ffcc00;
+        }
+
+        /* Footer */
+        .footer-wrapper {
+            background-color: black;
+            padding: 10px;
+        }
+
+        .footer {
+            background-color: #eee08f;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            body {
+                background-color: aqua;
+            }
+            .top-bar {
+                flex-direction: column;
+            }
+            .content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-color: mediumseagreen;
+            }
+            .articles {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+            .article {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Section -->
+    <div class="wrapper">
+        <header class="top-bar">
+            <div class="logo">.logo</div>
+            <div class="nav">.nav</div>
+            <div class="social">.social</div>
+        </header>
+        <div class="banner-wrapper">
+            <p>.banner</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wrapper">
+        <main class="content">
+            <section class="articles">
+                <div class="article">.article</div>
+                <div class="article">.article</div>
+                <div class="article">.article</div>
+                <div class="article">.article</div>
+                <div class="navigation">.navegacion</div>
+            </section>
+            <aside class="sidebar">
+                <div class="publicidad">.publicidad</div>
+                <div class="publicidad">.publicidad</div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-wrapper">
+        <footer class="footer">.pie</footer>
+    </div>
+
+</body>
+</html>
